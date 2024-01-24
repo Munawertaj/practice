@@ -47,6 +47,16 @@ public class BankService {
         }
     }
 
+    public void withdraw(int accountNumber, int amount) {
+        Account account = this.bankAccounts.get(accountNumber);
+        account.withdraw(amount);
+    }
+
+    public void deposit(int accountNumber, int amount) {
+        Account account = this.bankAccounts.get(accountNumber);
+        account.deposit(amount);
+    }
+
     public int getAmount(int accountNumber) {
         Account account = this.bankAccounts.get(accountNumber);
         int currentBalance = account.getAmount();
